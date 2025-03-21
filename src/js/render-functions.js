@@ -13,7 +13,7 @@ export function displayImages(images, gallery) {
     iziToast.error({
       buttons: [
         [
-          '<a class="close-btn" href=""><img src="/img/close.svg" alt="" /></a>',
+          '<a class="close-btn" href=""><img src="./img/close.svg" alt="" /></a>',
           function (instance, toast) {
             instance.hide(
               {
