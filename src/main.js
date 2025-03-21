@@ -9,7 +9,7 @@ const loader = document.querySelector('.loader');
 
 loader.style.display = 'none';
 
-form.addEventListener('submit', event => {
+form.addEventListener('submit', async event => {
   event.preventDefault();
 
   const searchText = form.elements['search-text'].value.trim();
@@ -25,18 +25,16 @@ form.addEventListener('submit', event => {
 
   loader.style.display = 'block';
 
-  searchImages(searchText)
-    .then(images => {
-      displayImages(images, gallery);
-      loader.style.display = 'none';
-    })
-    .catch(() => {
-      iziToast.error({
-        title: 'Error',
-        position: 'topRight',
-        message:
-          'There was an error loading the images. Please try again later.',
-      });
-      loader.style.display = 'none';
+  try {
+    const images = await searchImages(searchText);
+    displayImages(images, gallery);
+  } catch (error) {
+    iziToast.error({
+      title: 'Error,',
+      position: 'topRight',
+      message: 'There was an error loading the images. Please try again later.',
     });
+  } finally {
+    loader.style.display = 'none';
+  }
 });

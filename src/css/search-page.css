@@ -116,6 +116,20 @@ button:hover {
   color: #2e2f42;
 }
 
+.iziToast-buttons-child {
+  background-color: #ef4040 !important;
+}
+
+.loader-btn {
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 126px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 32px;
+}
+
 /* #region Loader */
 .loader {
   margin: 0 auto;

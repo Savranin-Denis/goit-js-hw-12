@@ -11,6 +11,21 @@ export function displayImages(images, gallery) {
 
   if (images.length === 0) {
     iziToast.error({
+      buttons: [
+        [
+          '<a class="close-btn" href=""><img src="./img/close.svg" alt="" /></a>',
+          function (instance, toast) {
+            instance.hide(
+              {
+                transitionOut: 'fadeOutUp',
+              },
+              toast,
+              'buttonName'
+            );
+          },
+        ],
+      ],
+      close: false,
       position: 'topRight',
       backgroundColor: ' #ef4040',
       messageColor: 'white',
