@@ -2,7 +2,7 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import errorIcon from '../img/error.svg';
+import errorIcon from '/img/error.svg';
 
 let lightbox;
 
@@ -13,7 +13,7 @@ export function displayImages(images, gallery) {
     iziToast.error({
       buttons: [
         [
-          '<a class="close-btn" href=""><img src="./img/close.svg" alt="" /></a>',
+          '<a class="close-btn" href=""><img src="/img/close.svg" alt="" /></a>',
           function (instance, toast) {
             instance.hide(
               {
