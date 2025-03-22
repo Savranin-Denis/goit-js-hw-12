@@ -2,18 +2,20 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import errorIcon from '/img/error.svg';
+import errorIcon from '../img/error.svg';
 
 let lightbox;
 
-export function displayImages(images, gallery) {
-  gallery.innerHTML = '';
+export function displayImages(images, gallery, append = false) {
+  if (!append) {
+    gallery.innerHTML = '';
+  }
 
   if (images.length === 0) {
     iziToast.error({
       buttons: [
         [
-          '<a class="close-btn" href=""><img src="../img/close.svg" alt="" /></a>',
+          '<a><img src="./img/close.svg" alt="" /></a>',
           function (instance, toast) {
             instance.hide(
               {
@@ -54,7 +56,7 @@ export function displayImages(images, gallery) {
     })
     .join('');
 
-  gallery.innerHTML = imageCards;
+  gallery.insertAdjacentHTML('beforeend', imageCards);
 
   if (!lightbox) {
     lightbox = new SimpleLightbox('.gallery a', {
