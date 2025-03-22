@@ -16,7 +16,7 @@ export async function searchImages(query, page = 1, perPage = 15) {
         page: page,
       },
     });
-    return response.data.hits;
+    return { images: response.data.hits, total: response.data.totalHits };
   } catch (error) {
     console.error('Error fetching images:', error);
     throw error;

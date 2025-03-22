@@ -15,7 +15,7 @@ export function displayImages(images, gallery, append = false) {
     iziToast.error({
       buttons: [
         [
-          '<a><img src="./img/close.svg" alt="" /></a>',
+          '<a><img src="../img/close.svg" alt="" /></a>',
           function (instance, toast) {
             instance.hide(
               {
