@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_KEY = import.meta.env.VITE_GALLERY_KEY;
+const API_KEY = VITE_GALLERY_KEY;
+
 const url = 'https://pixabay.com/api/';
 
 export async function searchImages(query, page = 1, perPage = 15) {
