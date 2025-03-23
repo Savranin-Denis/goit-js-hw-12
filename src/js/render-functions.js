@@ -3,6 +3,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import errorIcon from '../img/error.svg';
+import closeIcon from '/img/close.svg';
 
 let lightbox;
 
@@ -15,7 +16,7 @@ export function displayImages(images, gallery, append = false) {
     iziToast.error({
       buttons: [
         [
-          '<a><img src="../img/close.svg" alt="" /></a>',
+          `<a><img src="${closeIcon}" alt="" /></a>`,
           function (instance, toast) {
             instance.hide(
               {
